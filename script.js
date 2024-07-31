@@ -35,7 +35,7 @@ const questions = [
   let score = document.getElementById('score');
   submit.addEventListener('click',Submit);
   document.addEventListener('DOMContentLoaded',()=>{
-    score=localStorage.getItem('score');
+    score=sessionStorage.getItem('score');
     if(score){
         document.getElementById('score').textContent = `Your score is ${score} out of ${questions.length}`;
     }
@@ -49,7 +49,7 @@ const questions = [
             score++;
         }
     }
-    localStorage.setItem('score',score);
+    sessionStorage.setItem('score',score);
     document.getElementById('score').textContent = `Your score is ${score} out of ${questions.length}`;
 }
   function renderQuestions() {
